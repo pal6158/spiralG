@@ -26,30 +26,32 @@ public class spiral {
       int col_start = 0;
       int col_end = m - 1;
       while (row_start <= row_end || col_start <= col_end) {
-    
-        // 1
-      for (int col = row_start; col <= col_end; col++) {
-          System.out.print(matrix[row_start][col] + " ");
-      }
-      row_start++;
-    
-      //   2
-      for (int row = row_start; row <= row_end; row++) {
-          System.out.print(matrix[row][col_end]+" ");
-      }
-      col_end--;
 
-    //   3
-      for (int col = col_end; col >= col_start; col--) {
-        System.out.print(matrix[row_end][col]+" ");
+          // 1
+          for (int col = row_start; col <= col_end; col++) {
+              System.out.print(matrix[row_start][col] + " ");
+          }
+          row_start++;
+
+          //   2
+          for (int row = row_start; row <= row_end; row++) {
+              System.out.print(matrix[row][col_end] + " ");
+          }
+          col_end--;
+
+          //   3
+          for (int col = col_end; col >= col_start; col--) {
+              System.out.print(matrix[row_end][col] + " ");
+          }
+          row_end--;
+          for (int row = row_end; row >= row_start; row--) {
+              System.out.print(matrix[row][col_start] + " ");
+          }
+          col_start++;
+          System.out.println();
       }
-      row_end--;
-      for (int row = row_end; row >= row_start; row--) {
-        System.out.print(matrix[row][col_start]+" ");
-    }
-    col_start++;
-        System.out.println();
-    }
+    
+      sc.close();
    }
 }
 
